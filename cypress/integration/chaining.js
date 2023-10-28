@@ -9,7 +9,11 @@ beforeEach(() => {
 it('Chaining commands', () => {
 
   cy
-    .get('[data-cy="task"]')
-    .should('be.visible')
+    .contains('milk')
+
+  cy
+    .get('[data-cy=list]')
+    .eq(1)
+    .contains('milk')
 
 });
