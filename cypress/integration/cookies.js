@@ -1,35 +1,32 @@
 /// <reference types="cypress" />
 
+
 describe('Cookies', () => {
 
   beforeEach(() => {
+
+    Cypress.Cookies.preserveOnce('trello_token')
 
     cy
       .visit('/')
 
   })
 
-  it.only('test #1', () => {
+  it('test #1', () => {
 
     cy
-      .get('[data-cy="login-menu"]')
-      .click();
+      .setCookie('trello_token', '')
 
     cy
-      .get('[data-cy="login-email"]')
-      .type('filip@example.com');
+      .reload()
 
-    cy
-      .get('[data-cy="login-password"]')
-      .type('Asdf.1234#');
-
-    cy
-      .get('[data-cy="login"]')
-      .click();
-
-    });
+  });
 
   it('test #2', () => {
+
+  });
+
+  it('test #3', () => {
 
   });
 
